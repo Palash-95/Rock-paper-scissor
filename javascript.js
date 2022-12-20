@@ -7,34 +7,45 @@ function getComputerChoice(){
         case 3 : return "scissor"
     }
 }
-console.log(getComputerChoice())
 //write a function called playRound with two parameters computerSelection and userSelection to play the game 
 function playRound(c,u){
     if (c === u){return "Its a tie!"}
 
     else if (u === "rock"){
         switch (c) {
-            case "paper": return "You lose! paper beats rock";
+            case "paper": 
+            computerScore++;
+            return "You lose! paper beats rock";
             break;
-            case "scissor": return "You win! rock beats scissor";
+            case "scissor": 
+            userScore++;
+            return "You win! rock beats scissor";
             break;
         }
     }
 
     else if (u === "paper")   {
         switch (c) {
-            case "scissor": return "You lose! scissor beats paper";
+            case "scissor": 
+            computerScore++;
+            return "You lose! scissor beats paper";
             break;
-            case "rock": return "You win! paper beats rock";
+            case "rock": 
+            userScore++;
+            return "You win! paper beats rock";
             break;
         }
     }  
     
     else if (u === "scissor") {
         switch (c) {
-            case "rock": return "You lose! rock beats scissor";
+            case "rock": 
+            computerScore++;
+            return "You lose! rock beats scissor";
             break;
-            case "paper": return "You win! scissor beats paper";
+            case "paper": 
+            userScore++;
+            return "You win! scissor beats paper";
             break;
         }
     }
@@ -44,12 +55,33 @@ function playRound(c,u){
 }
 
 //write a function called game() to play the game 5 times
+let computerScore = 0;
+let userScore = 0;
+function game(){
+    for (let i = 0; i < 5; i++) {
+        let computerSelection = getComputerChoice();
+        let userSelection = prompt("Enter your choice :","").toLowerCase();
+        console.log(playRound(computerSelection,userSelection));
+        console.log(`Computer Score: ${computerScore}, User Score: ${userScore}`);
+    }
+    if (computerScore > userScore){
+      return " YOU LOSE !!! wanna play again?"
+    }
+    else if (computerScore < userScore){
+        return "CONGRATULATIONS!!! You won"
+    }
+    else {
+        return "Its a tie!!!"
+    }
+}
+
 //call getComputerChoice function and store the returned value in a variable
-let computerSelection = getComputerChoice();
-console.log(computerSelection);
+
+
 
 //prompt the user for a input and store it in a variable ,make it case insensitive
-let userSelection = prompt("Enter your choice :","").toLowerCase();
-console.log(userSelection)
-console.log(playRound(computerSelection,userSelection))
+
+
+//console.log(playRound(computerSelection,userSelection))
 //call the game() function
+console.log(game())
