@@ -1,4 +1,13 @@
 // write a function to get computer choice
+function getComputerChoice(){
+    let random = Math.floor(Math.random()*3)+1;
+    switch (random){
+        case 1 : return "Rock";
+        case 2 : return "Paper";
+        case 3 : return "Scissor"
+    }
+}
+console.log(getComputerChoice())
 //write a function called playRound with two parameters computerSelection and userSelection to play the game 
 //write a function called game() to play the game 5 times
 //call getComputerChoice function and store the returned value in a variable
