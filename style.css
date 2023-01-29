@@ -1,0 +1,12 @@
+body{
+    text-align: center;
+    background-color: azure;
+}
+
+button{
+    width: 200px;
+    height: 100px;
+    font-size: 50px;
+    margin: 20px;
+    background-color: rgb(70, 80, 134);
+}

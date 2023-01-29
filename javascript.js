@@ -56,11 +56,13 @@ function playRound(e){
     result.appendChild(score);
     if (computerScore === 5){
         winner.textContent = " YOU LOSE !!! wanna play again?";
+        winner.style.color = "red";
         result.appendChild(winner);
         resetGame();
     }
     else if (userScore === 5) {
         winner.textContent = "CONGRATULATIONS!!! You won";
+        winner.style.color = "green";
         result.appendChild(winner);
         resetGame();
     }
