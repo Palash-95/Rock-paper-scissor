@@ -7,15 +7,15 @@ function getComputerChoice(){
         case 3 : return "scissor"
     }
 }
-//write a function called playRound with two parameters computerSelection and userSelection to play the game 
+
 function playRound(e){
-    let c = getComputerChoice();
-    let u = e.target.id;
+    let computerChoice = getComputerChoice();
+    let userSelection = e.target.id;
 
-    if (c === u){result.textContent = "Its a tie!"}
+    if (computerChoice === userSelection){result.textContent = "Its a tie!"}
 
-    else if (u === "rock"){
-        switch (c) {
+    else if (userSelection === "rock"){
+        switch (computerChoice) {
             case "paper": 
             computerScore++;
             result.textContent = "You lose! paper beats rock";
@@ -27,8 +27,8 @@ function playRound(e){
         }
     }
 
-    else if (u === "paper")   {
-        switch (c) {
+    else if (userSelection === "paper")   {
+        switch (computerChoice) {
             case "scissor": 
             computerScore++;
             result.textContent = "You lose! scissor beats paper";
@@ -40,8 +40,8 @@ function playRound(e){
         }
     }  
     
-    else if (u === "scissor") {
-        switch (c) {
+    else if (userSelection === "scissor") {
+        switch (computerChoice) {
             case "rock": 
             computerScore++;
             result.textContent = "You lose! rock beats scissor";
@@ -68,7 +68,7 @@ function playRound(e){
     }
 }
 
-//write a function called game() to play the game 5 times
+
 let computerScore = 0;
 let userScore = 0;
 function resetGame(){
